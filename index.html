@@ -19,6 +19,27 @@
 		<!-- The Letter !-->
 		<p id = "letter" style = "display:none;">Sorry you don't have enough magic. Click the magic want to learn some.</p>
     
-    <script link = "https://raw.githubusercontent.com/CandyLXY/CandyLXY.github.io/master/index.js"></script>
+    <script>
+	var timeP = 0;
+	var value = 1;
+	var upgradeC = 100;
+		    
+	function btn() {
+  		timeP += value;
+		        
+  		document.getElementById("num").innerHTML = timeP;
+	}
+	function upgrade() {
+  		if(timeP > upgradeC){
+	  		timeP -= upgradeC;
+			value += value * 2;
+			upgradeC += upgradeC * 2;
+			document.getElementById("Cost").innerHTML = upgradeC;
+  		}
+  		else if(timeP < upgradeC){
+		 	document.getElementById("letter").style.display = block;
+		}   
+	};
+    </script>
   </body>
 </html>
